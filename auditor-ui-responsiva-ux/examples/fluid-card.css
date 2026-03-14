@@ -1,0 +1,66 @@
+/* ==========================================
+   EJEMPLO: TARJETA ADAPTATIVA (MOBILE-FIRST)
+   ========================================== */
+
+/* ❌ Mal: Ancho fijo y px
+.card {
+  width: 300px;
+  padding: 20px;
+  font-size: 16px;
+}
+*/
+
+/* ✅ Bien: Responsivo y accesible */
+.card {
+  /* Ancho fluido con máximo */
+  width: 100%;
+  max-width: 25rem; /* ~400px */
+  
+  /* Unidades relativas para espaciado */
+  padding: 1.25rem;
+  margin: 1rem auto;
+  
+  /* Tipografía fluida */
+  /* min: 16px, max: 20px, escala según viewport */
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  
+  /* Contenedor flexible */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+  /* Estética premium */
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.card-title {
+  /* Título escala más rápido */
+  font-size: clamp(1.25rem, 1.1rem + 1vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.card-button {
+  /* Accesibilidad: Target Size mínimo 24px (aquí ~44px para mejor UX) */
+  min-height: 2.75rem;
+  padding: 0.5rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  border-radius: 0.375rem;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  
+  transition: background-color 0.2s;
+}
+
+.card-button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}

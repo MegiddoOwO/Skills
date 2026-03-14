@@ -1,0 +1,66 @@
+/* ==========================================
+   EJEMPLO: DASHBOARD CON GRID TEMPLATE AREAS
+   ========================================== */
+
+.dashboard {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  
+  /* Layout Mobile-First: Una sola columna */
+  grid-template-areas:
+    "header"
+    "main"
+    "sidebar"
+    "footer";
+}
+
+/* Layout para Tablets / Laptops pequeñas */
+@media (min-width: 768px) {
+  .dashboard {
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+  }
+}
+
+/* Layout para Escritorio */
+@media (min-width: 1024px) {
+  .dashboard {
+    /* 3 columnas: sidebar fija, main flexible, widgets de derecha */
+    grid-template-columns: 240px 1fr 300px;
+    grid-template-areas:
+      "header header header"
+      "sidebar main widgets"
+      "footer footer footer";
+  }
+}
+
+/* Asignación de áreas */
+.dashboard-header { grid-area: header; }
+.dashboard-main   { grid-area: main; }
+.dashboard-sidebar { grid-area: sidebar; }
+.dashboard-widgets { grid-area: widgets; }
+.dashboard-footer { grid-area: footer; }
+
+/* Estilos de soporte para visualización */
+.dashboard > * {
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  min-width: 0; /* Previene overflow en celdas de grid */
+}
+
+/* Ocultar widgets en móviles si no son críticos */
+.dashboard-widgets {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-widgets {
+    display: block;
+  }
+}
