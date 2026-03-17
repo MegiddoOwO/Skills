@@ -52,14 +52,14 @@ Utilizar siempre los tokens de diseño de Tiendanube para consistencia:
 
 ### 📝 Guías y Arquitectura (Referencia Local)
 Consulta los recursos especializados para dominar Scatola:
-- **Switcher de Inicio:** [home_switcher_guide.md](file:///Users/macintosh/Documents/nube/.agent/skills/tiendanube_dev/resources/home_switcher_guide.md)
-- **Settings Pro:** [advanced_settings.md](file:///Users/macintosh/Documents/nube/.agent/skills/tiendanube_dev/resources/advanced_settings.md)
-- **Referencia Twig:** [twig_reference.md](file:///Users/macintosh/Documents/nube/.agent/skills/tiendanube_dev/resources/twig_reference.md)
-- **Performance & SEO:** [performance_best_practices.md](file:///Users/macintosh/Documents/nube/.agent/skills/tiendanube_dev/resources/performance_best_practices.md)
-- **Sección Simple:** [crear_seccion_simple.md](file:///Users/macintosh/Documents/nube/.agent/workflows/crear_seccion_simple.md)
-- **Carrusel (Swiper):** [crear_seccion_carrusel.md](file:///Users/macintosh/Documents/nube/.agent/workflows/crear_seccion_carrusel.md)
-- **Landing Independiente:** [crear_landing_independiente.md](file:///Users/macintosh/Documents/nube/.agent/workflows/crear_landing_independiente.md)
-- **Formularios Pro:** [crear_formulario.md](file:///Users/macintosh/Documents/nube/.agent/workflows/crear_formulario.md)
+- **Switcher de Inicio:** [home_switcher_guide.md]( tiendanube_dev/resources/home_switcher_guide.md)
+- **Settings Pro:** [advanced_settings.md](tiendanube_dev/resources/advanced_settings.md)
+- **Referencia Twig:** [twig_reference.md](tiendanube_dev/resources/twig_reference.md)
+- **Performance & SEO:** [performance_best_practices.md](tiendanube_dev/resources/performance_best_practices.md)
+- **Sección Simple:** [crear_seccion_simple.md](tiendanube_dev/workflows/crear_seccion_simple.md)
+- **Carrusel (Swiper):** [crear_seccion_carrusel.md](tiendanube_dev/workflows/crear_seccion_carrusel.md)
+- **Landing Independiente:** [crear_landing_independiente.md](tiendanube_dev/workflows/crear_landing_independiente.md)
+- **Formularios Pro:** [crear_formulario.md](tiendanube_dev/workflows/crear_formulario.md)
 
 ### 🔗 Documentación Crítica (Enlaces Externos)
 - [Acerca del Theme Base](https://docs.tiendanube.com/help/acerca-del-theme-base)
