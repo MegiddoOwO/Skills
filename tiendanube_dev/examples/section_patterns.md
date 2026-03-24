@@ -68,10 +68,36 @@ Ideal para layouts que requieren saltar el primer elemento (ej: una grilla con u
 {% endfor %}
 ```
 
-### 8. Lógica de Badge de Oferta (Complex Twig)
+### 9. Breadcrumbs Dinámicos
+Pattern estándar para la ruta de navegación:
+
 ```twig
-{% if product.compare_at_price > product.price %}
-    {% set percentage = ((product.compare_at_price - product.price) / product.compare_at_price * 100) | round %}
-    <span class="badge badge-sale">-{{ percentage }}%</span>
-{% endif %}
+<nav class="breadcrumbs">
+    {% for crumb in breadcrumbs %}
+        {% if crumb.last %}
+            <span class="breadcrumb-item active">{{ crumb.name }}</span>
+        {% else %}
+            <a href="{{ crumb.url }}" class="breadcrumb-item">{{ crumb.name }}</a>
+            <span class="divider">/</span>
+        {% endif %}
+    {% endfor %}
+</nav>
+```
+
+### 10. Menú de Navegación Multinivel
+```twig
+<ul class="nav-menu">
+    {% for item in navigation %}
+        <li class="nav-item {% if item.current %}active{% endif %}">
+            <a href="{{ item.url }}">{{ item.name }}</a>
+            {% if item.subitems %}
+                <ul class="submenu">
+                    {% for sub in item.subitems %}
+                        <li><a href="{{ sub.url }}">{{ sub.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
 ```

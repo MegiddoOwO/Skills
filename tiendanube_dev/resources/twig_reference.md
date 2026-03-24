@@ -7,9 +7,17 @@ Twig es el motor de plantillas utilizado por Tiendanube. Esta guía detalla los 
 ### 🏪 `store` (La Tienda)
 - `store.name`: Nombre comercial.
 - `store.url`: URL base de la tienda.
-- `store.logo`: URL del logo cargado en el admin.
-- `store.contact_email`, `store.address`, `store.phone`.
-- `store.social_networks`: Objeto con enlaces a Facebook, Instagram, Twitter, etc.
+- `store.logo`, `store.favicon`: URLs de los archivos de marca.
+- `store.email`, `store.phone`, `store.address`.
+- `store.social_networks`: Objeto con `facebook`, `instagram`, `twitter`, `pinterest`, `blog`.
+- `store.customer_accounts_enabled`: Booleano para lógica de login.
+
+### 🌐 Variables Globales de Contexto
+- `current_url`: URL completa de la página actual.
+- `page_title`: Título para el tag `<title>`.
+- `page_description`: Contenido para meta descripción.
+- `template`: Nombre del template actual (e.g., `home`, `product`, `cart`, `search`).
+- `current_language.name`, `current_language.lang`: Datos del idioma activo.
 
 ### 🏷️ `product` (El Producto)
 - `product.name`: Título del producto.
@@ -22,13 +30,19 @@ Twig es el motor de plantillas utilizado por Tiendanube. Esta guía detalla los 
 - `product.url`: URL de la página de detalles.
 
 ### 🛒 `cart` (El Carrito)
-- `cart.items`: Lista de productos agregados.
-- `cart.total | money`: Suma total de los productos.
+- `cart.items`: Lista de productos agregados (`Cart_item`).
+- `cart.total`, `cart.subtotal`: Montos acumulados.
 - `cart.items_count`: Cantidad total de artículos.
+- `cart.promos`: Lista de promociones aplicadas (e.g., "3x2").
+- `cart.shipping_cost`: Costo de envío calculado.
 
 ### 👤 `customer` & `order`
-- `customer.name`, `customer.email`: Datos del usuario logueado.
-- `order.number`, `order.status`: Datos tras una compra.
+- `customer.name`, `customer.email`, `customer.order_count`.
+- `order.number`, `order.status`, `order.payment_status`, `order.shipping_status`.
+
+### 🗺️ Navegación y Estructura
+- `navigation`: Array de links para menús (con `name`, `url`, `subitems`, `current`).
+- `breadcrumbs`: Lista de niveles para la ruta de navegación (con `name`, `url`, `last`).
 
 ---
 
