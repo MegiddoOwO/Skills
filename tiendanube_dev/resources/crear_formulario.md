@@ -6,7 +6,7 @@ description: Flujo para crear un formulario de contacto funcional y sincronizado
 
 ### 🚨 PASO 0: Protocolo de Diagnóstico (OBLIGATORIO)
 
-Antes de proceder, el agente debe aplicar la **Biblia de Scatola** (`.agent/skills/tiendanube_master/SKILL.md`) y realizar las 5 preguntas del Protocolo de Diagnóstico al usuario. **No se debe generar código hasta que los 5 puntos estén validados.**
+Antes de proceder, el agente debe aplicar la **Biblia de tienda Scatola** (`.agent/skills/tiendanube_dev/SKILL.md`) y realizar las 5 preguntas del Protocolo de Diagnóstico al usuario. **No se debe generar código hasta que los 5 puntos estén validados.**
 
 **IMPORTANTE:** Para que los mensajes aparezcan en el panel de Tiendanube, los IDs deben ser exactos.
 
