@@ -27,6 +27,9 @@ Cada sección debe seguir este patrón organizacional:
 3.  **Estilos (CSS):** Uso de variables globales (`--main-foreground`, `--accent-color`).
 4.  **Scripts (JS):** Inicialización de sliders o lógica interactiva.
 
+> [!TIP]
+> Consulta [section_patterns.md](examples/section_patterns.md) para ver ejemplos de implementación y mejores prácticas de diseño.
+
 ### 2. Entregables Obligatorios (ULTRAMEGA IMPORTANTE)
 
 Para cada nueva sección, es obligatorio generar y/o actualizar:
@@ -35,6 +38,15 @@ Para cada nueva sección, es obligatorio generar y/o actualizar:
 2.  **Configuración `settings.txt`:** Definición de campos y tipos para el admin.
 3.  **Valores `defaults.txt`:** Datos iniciales para que la sección no se vea vacía.
 4.  **Integración `home-section-switch.tpl`:** El bloque `elseif` para que la sección sea elegible y movible en el Home.
+
+---
+
+## 📂 Arquitectura y Referencias
+
+Para profundizar en el desarrollo técnico del Theme Base, consulta:
+
+- **Infraestructura:** [theme_base_architecture.md](resources/theme_base_architecture.md) (Carpetas, Config, Assets).
+- **Ejemplos de Diseño:** [section_patterns.md](examples/section_patterns.md) (Banners, Filtros, AJAX).
 
 ---
 
@@ -55,6 +67,9 @@ Utilizar siempre los tokens de diseño de Tiendanube para consistencia:
 - **Grupos:** Organizar secciones por títulos claros en el admin.
 - **Indentación:** Obligatorio 4 espacios en sub-propiedades para evitar errores de parseo.
 
+> [!IMPORTANT]
+> Para configuraciones avanzadas de `sections.txt` y `translations.txt`, ver [theme_base_architecture.md](resources/theme_base_architecture.md).
+
 ---
 
 ## 🛠️ Ejemplos y Referencias
@@ -74,11 +89,7 @@ Consulta los recursos especializados para dominar el codigo implementado en la t
 
 ### 🔗 Documentación Crítica (Enlaces Externos)
 
-- [Acerca del Theme Base](https://docs.tiendanube.com/help/acerca-del-theme-base)
-- [Nuestro Código (Twig, Snipplets, Objetos)](https://docs.tiendanube.com/help/nuestro-codigo)
-- [Manual de Funcionalidades & Tutoriales](https://docs.tiendanube.com/help/funcionalidades)
 - [DevHub: API Publica y Nimbus](https://dev.nuvemshop.com.br/es/docs/developer-tools/overview)
-- [Guía de Personalización de Diseño](https://ayuda.tiendanube.com/es_AR/diseno/guia-personalizar-el-diseno-de-tu-tiendanube)
 
 ---
 

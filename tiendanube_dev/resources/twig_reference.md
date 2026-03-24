@@ -1,68 +1,67 @@
-# 📘 Referencia Técnica: Twig en Tiendanube
+# Referencia Técnica: Twig en Tiendanube
 
-Este documento es una guía rápida sobre los objetos y métodos más utilizados en el desarrollo de temas.
+Twig es el motor de plantillas utilizado por Tiendanube. Esta guía detalla los objetos globales, filtros de sistema y métodos de inclusión para el desarrollo de temas profesionales.
 
-## 📦 Objetos Principales
+## 📦 Objetos Globales y Propiedades
 
-### `store`
-Información general de la tienda.
-- `store.name`: Nombre de la tienda.
-- `store.logo`: URL del logo.
-- `store.url`: URL de la tienda.
-- `store.contact_email`: Email de contacto.
+### 🏪 `store` (La Tienda)
+- `store.name`: Nombre comercial.
+- `store.url`: URL base de la tienda.
+- `store.logo`: URL del logo cargado en el admin.
+- `store.contact_email`, `store.address`, `store.phone`.
+- `store.social_networks`: Objeto con enlaces a Facebook, Instagram, Twitter, etc.
 
-### `product`
-Disponible en `product.tpl` y loops de productos.
-- `product.name`: Nombre del producto.
-- `product.url`: URL del producto.
-- `product.images`: Lista de imágenes.
-- `product.price | money`: Precio formateado.
-- `product.compare_at_price | money`: Precio de comparación.
-- `product.has_stock`: Booleano de stock.
-- `product.variants`: Variantes del producto.
+### 🏷️ `product` (El Producto)
+- `product.name`: Título del producto.
+- `product.description`: Contenido HTML de la descripción.
+- `product.price | money`: Precio actual formateado.
+- `product.compare_at_price | money`: Precio original (tachar).
+- `product.images`: Lista de objetos de imagen.
+- `product.has_stock`: Booleano de disponibilidad.
+- `product.variants`: Lista de variantes (color, talle).
+- `product.url`: URL de la página de detalles.
 
-### `category`
-Disponible en `category.tpl`.
-- `category.name`: Nombre de la categoría.
-- `category.products`: Lista de productos en la categoría.
-- `category.description`: Descripción.
+### 🛒 `cart` (El Carrito)
+- `cart.items`: Lista de productos agregados.
+- `cart.total | money`: Suma total de los productos.
+- `cart.items_count`: Cantidad total de artículos.
 
-### `cart`
-Información del carrito actual.
-- `cart.items`: Productos en el carrito.
-- `cart.total | money`: Total del carrito.
+### 👤 `customer` & `order`
+- `customer.name`, `customer.email`: Datos del usuario logueado.
+- `order.number`, `order.status`: Datos tras una compra.
 
 ---
 
-## 🛠️ Métodos y Filtros Comunes
+## 🛠️ Filtros y Funciones de Tiendanube
 
-### Filtros
-- `| money`: Formatea números como moneda.
-- `| translate`: Traduce un string usando `translations.txt`.
-- `| default('valor')`: Valor por defecto si la variable es nula/vacía.
-- `| resize(width, height)`: Redimensiona imágenes de Tiendanube.
-- `| static_url`: Genera la URL para archivos en `static/`.
+### 🖼️ Manejo de Imágenes
+- `product_image_url(size)`: Genera la URL de la imagen del producto. 
+  - *Tamaños:* `tiny`, `small`, `medium`, `large`, `huge`, `original`.
+- `| resize(width, height)`: Redimensiona imágenes generales.
 
-### Lógica Condicional
-```twig
-{% if product.display_price %}
-  <span class="price">{{ product.price | money }}</span>
-{% endif %}
-```
+### 🔗 Assets y Recursos
+- `| static_url`: Genera la URL para archivos en la carpeta `/static`.
+- `css_tag`: Función para generar el tag `<link rel="stylesheet">`.
+- `js_tag`: Función para generar el tag `<script src="...">`.
 
-### Bucles (Loops)
-```twig
-{% for item in cart.items %}
-  <div class="cart-item">{{ item.name }}</div>
-{% endfor %}
-```
+### 💰 Formatos y Traducción
+- `| money`: Aplica el formato de moneda de la tienda.
+- `| translate` (o `| t`): Traduce un texto basado en `config/translations.txt`.
+- `| default('valor')`: Proporciona un fallback si la variable está vacía.
 
 ---
 
-## 🎨 Tipos de Campos en `settings.txt`
-- `text`: Campo de texto simple.
-- `textarea`: Área de texto.
-- `checkbox`: Interruptor booleano.
-- `select`: Menú desplegable.
-- `image`: Selector de imágenes (requiere `original`).
-- `color`: Selector de color hexadecimal.
+## 🏗️ Métodos de Inclusión Modular
+
+| Método | Uso Recomendado |
+| :--- | :--- |
+| `{% snipplet "file.tpl" %}` | Inclusión rápida de la carpeta `/snipplets`. No requiere ruta completa. |
+| `{% include "path/to/file.tpl" with {var: val} %}` | Inclusión estándar pasando variables específicas. Requiere ruta desde la raíz. |
+| `{% embed "file.tpl" %}` | Permite sobreescribir bloques (`{% block %}`) dentro del archivo incluido. |
+
+---
+
+## 💡 Mejores Prácticas de Twig
+- **Defensa:** Usar `{% if var is defined %}` e `{% if list is not empty %}` antes de renderizar.
+- **Rendimiento:** Utilizar `{% cache %}` en bloques de código pesados que no cambian frecuentemente.
+- **Seguridad:** Usar `| escape` o `| e` para sanitizar entradas de usuario si es necesario, aunque Tiendanube escapa la mayoría automáticamente.
