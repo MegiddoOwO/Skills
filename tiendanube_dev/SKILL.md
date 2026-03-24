@@ -90,10 +90,15 @@ Para **cada nueva sección**, es obligatorio generar y/o actualizar:
 | :----------------------------------------------------------------------- | :---------------------------------------------------------------- |
 | [twig_reference.md](resources/twig_reference.md)                         | Objetos globales, filtros, funciones y mejores prácticas de Twig. |
 | [theme_base_architecture.md](resources/theme_base_architecture.md)       | Carpetas, configuración avanzada y performance.                   |
+| [guia_estructura_tiendanube.md](resources/guia_estructura_tiendanube.md) | Guía de estructura y arquitectura de Tiendanube.                  |
+| [codefy_technical_docs.md](resources/codefy_technical_docs.md)           | Documentación técnica y utilidades extra (Codefy).                |
+| [contexto_cursor.md](resources/contexto_cursor.md)                       | Contexto del editor y metodologías recomendadas.                  |
 | [advanced_settings.md](resources/advanced_settings.md)                   | Guía avanzada de `settings.txt`.                                  |
 | [home_switcher_guide.md](resources/home_switcher_guide.md)               | Switcher de secciones del Home.                                   |
 | [performance_best_practices.md](resources/performance_best_practices.md) | Performance y SEO.                                                |
-| [personalizar_item_menu.md](resources/personalizar_item_menu.md)         | Personalización de menús.                                         |
+| [personalizar_item_menu.md](resources/personalizar_item_menu.md)         | Personalización de menús y navegación.                            |
+| [guia_footer.md](resources/guia_footer.md)                               | Guía para personalización del footer.                             |
+| [subir_fuentes_custom.md](resources/subir_fuentes_custom.md)             | Instrucciones para subir fuentes tipográficas personalizadas.     |
 
 ### 💎 Ejemplos y Patrones (`examples/`)
 
@@ -101,6 +106,9 @@ Para **cada nueva sección**, es obligatorio generar y/o actualizar:
 | :------------------------------------------------------------ | :------------------------------------------------------------- |
 | [section_patterns.md](examples/section_patterns.md)           | Patrones de diseño para secciones (Banners, AJAX, Navegación). |
 | [custom_banner_section.md](examples/custom_banner_section.md) | Ejemplo completo de sección de banner personalizado.           |
+| [carrusel_productos.md](examples/carrusel_productos.md)       | Ejemplos y guías para carruseles de productos.                 |
+| [cart_delivery_date.md](examples/cart_delivery_date.md)       | Ejemplos y ubicaciones para fecha de entrega en el carrito.    |
+| [compra_por_pasos.md](examples/compra_por_pasos.md)           | Instrucciones y ejemplos para compra en múltiples pasos.       |
 
 ### 🔧 Workflows (Paso a Paso)
 
